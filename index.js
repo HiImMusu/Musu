@@ -17,24 +17,28 @@ app.get("/GetCatalog", (req, res) => {
 
     if (_APIKEY) {
         if (_APIKEY == APIKEY) {
-            req.send(JSON.stringify({
+            res.send(JSON.stringify({
                 SUCCESS: true,
                 MESSAGE: [{
                     TEST: "SUCCESSSS"
                 }]
             }))
         } else {
-            req.send(JSON.stringify({
+            res.send(JSON.stringify({
                 SUCCESS: false,
                 MESSAGE: "Permission Denied!"
             }))
         }
     } else {
-        req.send(JSON.stringify({
+        res.send(JSON.stringify({
             SUCCESS: false,
             MESSAGE: "APIKEY Missing!"
         }))
     }
+    res.send(JSON.stringify({
+        SUCCESS: false,
+        MESSAGE: "Something went wrong!"
+    }))
 })
 
 app.listen(port, () => console.log(`HelloNode app listening on port ${port}!`));
