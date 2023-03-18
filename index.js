@@ -17,25 +17,25 @@ app.get("/GetCatalog", (req, res) => {
 
     if (_APIKEY) {
         if (_APIKEY == APIKEY) {
-            res.send(JSON.stringify({
+            res.status(200).send(JSON.stringify({
                 SUCCESS: true,
                 MESSAGE: [{
                     TEST: "SUCCESSSS"
                 }]
             }))
         } else {
-            res.send(JSON.stringify({
+            res.status(403).send(JSON.stringify({
                 SUCCESS: false,
                 MESSAGE: "Permission Denied!"
             }))
         }
     } else {
-        res.send(JSON.stringify({
+        res.status(404).send(JSON.stringify({
             SUCCESS: false,
             MESSAGE: "APIKEY Missing!"
         }))
     }
-    res.send(JSON.stringify({
+    res.status(404).send(JSON.stringify({
         SUCCESS: false,
         MESSAGE: "Something went wrong!"
     }))
