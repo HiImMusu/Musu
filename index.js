@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 })
 
 app.get("/GetCatalog", (req, res) => {
-    print(req.header)
+    console.log(req.header)
     _APIKEY = req.header["APIKEY"]
 
     if (_APIKEY) {
