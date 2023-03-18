@@ -1,0 +1,22 @@
+{
+  "name": "musu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HiImMusu/Musu.git"
+  },
+  "author": "Indelton, HiImMusu, Daniel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HiImMusu/Musu/issues"
+  },
+  "homepage": "https://github.com/HiImMusu/Musu#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
