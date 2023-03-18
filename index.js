@@ -12,35 +12,29 @@ app.get("/", (req, res) => {
     }));
 })
 
-app.get("/GetCatalog", (req, res) => {
-    console.log(req.header)
-    _APIKEY = req.header["APIKEY"]
+app.get("/GetCatalogItems", (req, res) => {
+    const keyword = req.query.keyword || "shirt";
+    const url = `https://search.roblox.com/catalog/json?Category=2&Keyword=${keyword}&ResultsPerPage=10`;
 
-    if (_APIKEY) {
-        if (_APIKEY == APIKEY) {
+    https.get(url, (response) => {
+        let data = "";
+        response.on("data", (chunk) => {
+            data += chunk;
+        });
+        response.on("end", () => {
+            const results = JSON.parse(data);
             res.status(200).send(JSON.stringify({
                 SUCCESS: true,
-                MESSAGE: [{
-                    TEST: "SUCCESSSS"
-                }]
-            }))
-        } else {
-            res.status(403).send(JSON.stringify({
-                SUCCESS: false,
-                MESSAGE: "Permission Denied!"
-            }))
-        }
-    } else {
-        res.status(404).send(JSON.stringify({
+                MESSAGE: results
+            }));
+        });
+    }).on("error", (error) => {
+        res.status(500).send(JSON.stringify({
             SUCCESS: false,
-            MESSAGE: "APIKEY Missing!"
-        }))
-    }
-    res.status(404).send(JSON.stringify({
-        SUCCESS: false,
-        MESSAGE: "Something went wrong!"
-    }))
-})
+            MESSAGE: "Failed to fetch catalog items"
+        }));
+    });
+});
 
 app.listen(port, () => console.log(`HelloNode app listening on port ${port}!`));
 
