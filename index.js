@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 })
 
 app.get("/GetCatalogItems", (req, res) => {
-    const category = req.query.category || 3;
+    const category = req.query.category || 11; // change category to 11 for shirts
     const url = `https://search.roblox.com/catalog/json?Category=${category}&ResultsPerPage=10`;
 
     https.get(url, (response) => {
@@ -37,4 +37,3 @@ app.get("/GetCatalogItems", (req, res) => {
 });
 
 app.listen(port, () => console.log(`HelloNode app listening on port ${port}!`));
-
