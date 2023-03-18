@@ -13,8 +13,7 @@ app.get("/", (req, res) => {
 })
 
 app.get("/GetCatalogItems", (req, res) => {
-    const category = req.query.category || 11; // change category to 11 for shirts
-    const url = `https://search.roblox.com/catalog/json?Category=${category}&ResultsPerPage=10`;
+    const url = `https://search.roblox.com/catalog/json?Category=7&ResultsPerPage=10`;
 
     https.get(url, (response) => {
         let data = "";
