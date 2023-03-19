@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 })
 
 app.get("/GetCatalogItems", (req, res) => {
-    const url = "https://catalog.roblox.com/v2/search/items/details?Category=3&Subcategory=12d&SortType=0&SortAggregation=5&Limit=10";
+    const url = "https://catalog.roblox.com/v2/search/items/details?Category=3&Subcategory=56&salesTypeFilter=1&Limit=10";
 
     https.get(url, (response) => {
         let data = "";
