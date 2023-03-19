@@ -13,8 +13,9 @@ app.get("/", (req, res) => {
 })
 
 app.get("/GetShirts", (req, res) => {
-    const url = "https://catalog.roblox.com/v2/search/items/details?Category=3&Subcategory=56&salesTypeFilter=1&&Keyword=Shirt&Limit=30";
-
+    //const url = "https://catalog.roblox.com/v2/search/items/details?Category=3&Subcategory=56&salesTypeFilter=1&&Keyword=Shirt&Limit=30";
+    const url = "https://catalog.roblox.com/v2/search/items/details?Subcategory=5&CreatorTargetId=1&SortType=0&SortAggregation=5&Limit=10"
+    
     https.get(url, (response) => {
         let data = "";
         response.on("data", (chunk) => {
