@@ -36,7 +36,7 @@ app.get("/GetShirts", (req, res) => {
 });
 
 app.get("/GetHairs", (req, res) => {
-    const url = "https://catalog.roblox.com/v2/search/items/details?Category=2&Subcategory=2&salesTypeFilter=1&&Keyword=Hair&Limit=30";
+    const url = "https://catalog.roblox.com/v2/search/items/details?Category=4&Subcategory=20&salesTypeFilter=1&Limit=30";
 
     https.get(url, (response) => {
         let data = "";
@@ -59,7 +59,7 @@ app.get("/GetHairs", (req, res) => {
 });
 
 app.get("/GetPants", (req, res) => {
-    const url = "https://catalog.roblox.com/v2/search/items/details?Category=3&Subcategory=57&salesTypeFilter=1&&Keyword=Pants&Limit=30";
+    const url = "https://catalog.roblox.com/v2/search/items/details?Category=3&Subcategory=57&salesTypeFilter=1&Limit=30";
 
     https.get(url, (response) => {
         let data = "";
@@ -82,7 +82,7 @@ app.get("/GetPants", (req, res) => {
 });
 
 app.get("/GetFaces", (req, res) => {
-    const url = "https://catalog.roblox.com/v2/search/items/details?Category=2&Subcategory=3&salesTypeFilter=1&&Keyword=Face&Limit=30";
+    const url = "https://catalog.roblox.com/v2/search/items/details?Category=4&Subcategory=10&salesTypeFilter=1&Limit=30";
 
     https.get(url, (response) => {
         let data = "";
